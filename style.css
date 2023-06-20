@@ -1,0 +1,185 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+:root {
+  --clr_primary_400: hsl(228, 39%, 23%);
+
+  --clr_accent_100: hsl(13, 100%, 96%);
+  --clr_accent_300: hsl(13, 100%, 75%);
+  --clr_accent_400: hsl(12, 88%, 59%);
+  --clr_accent_500: hsl(12, 88%, 45%);
+
+  --clr_neutral_900: hsl(232, 12%, 13%);
+  --clr_neutral_100: hsl(0 0% 100%);
+  --ff_primary: "Be Vietnam Pro", sans-serif;
+  --ff_body: var(--ff_primary);
+  --ff_heading: var(--ff_primary);
+  --fw_regular: 400;
+  --fw_semi: 500;
+  --fw_bold: 700;
+
+  --fs_300: 0.8125rem;
+  --fs_400: 0.875rem;
+  --fs_500: 0.9375rem;
+  --fs_600: 1rem;
+  --fs_700: 1.875rem;
+  --fs_800: 2.5rem;
+  --fs_900: 3.5rem;
+
+  --fs_body: var(--fs_400);
+  --fs_primary_heading: var(--fs_800);
+  --fs_secondary_heading: var(--fs_700);
+  --fs_nav: var(--fs_500);
+  --fs_btn: var(--fs_300);
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utility Class */
+.text_primary_400 {
+  color: var(--clr_primary_400);
+}
+.text_accent_400 {
+  color: var(--clr_accent_400);
+}
+.text_accent_100 {
+  color: var(--clr_accent_100);
+}
+.text_neutral_100 {
+  color: var(--clr_neutral_100);
+}
+.text_neutral_900 {
+  color: var(--clr_neutral_900);
+}
+
+.bg_primary_400 {
+  background-color: var(--clr_primary_400);
+}
+.bg_accent_400 {
+  background-color: var(--clr_accent_400);
+}
+.bg_accent_100 {
+  background-color: var(--clr_accent_100);
+}
+.bg_neutral_100 {
+  background-color: var(--clr_neutral_100);
+}
+.bg_neutral_900 {
+  background-color: var(--clr_neutral_900);
+}
+
+.fw_bold {
+  font-weight: var(--ff_body);
+}
+.fw_semi {
+  font-weight: var(--fw_semi);
+}
+.fw_regular {
+  font-weight: var(--fw_regular);
+}
+
+.fs_primary_heading {
+  font-size: var(--fs_primary_heading);
+  line-height: 1.1;
+}
+.fs_secondary_heading {
+  font-size: var(--fs_secondary_heading);
+  line-height: 1.1;
+}
+
+.fs_300 {
+  font-size: var(--fs_300);
+}
+.fs_400 {
+  font-size: var(--fs_400);
+}
+.fs_500 {
+  font-size: var(--fs_500);
+}
+.fs_600 {
+  font-size: var(--fs_600);
+}
+
+/* general styling */
+body{
+  font-size: var(--fs_body);
+  font-family: var(--ff_body);
+  color: var(--clr_primary_400);
+}
+
+.container{
+  --max-width:1110px;
+  --padding:1rem;
+  width: min(var(--max-width),100% - (var(--padding)*2));
+  margin-inline: auto;
+}
+.even_columns{
+display: grid;
+gap: 1rem;
+}
+.padding_block_900{
+  padding-block: 3rem;
+}
+.padding_block_700{
+  padding-block: 2rem;
+}
+.btn{
+  border: 0;
+  border-radius: 100vmax;
+  padding: 1.25em 2.5em;
+  font-weight: var(--fw_bold);
+  font-size: var(--fs_btn);
+  line-height: 1;
+  color: var(--clr_neutral_100);
+  background-color: var(--clr_accent_400);
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 1.125em 1em -1em var(--clr_accent_500);
+  transition: background-color 0.3s;
+}
+.btn:hover,.btn:focus-visible{
+  background-color: var(--clr_accent_300);
+}
+.btn[data-type='inverted']{
+  color: var(--clr_accent_400);
+  background-color: var(--clr_neutral_100);
+  transition: color 0.3s;
+
+}
+.btn[data-type='inverted']:hover,.btn[data-type='inverted']:focus-visible{
+  color: var(--clr_accent_300);
+  background-color: var(--clr_neutral_100);
+}
+
+@media (min-width: 50em) {
+  :root {
+
+    --fs_body: var(--fs_500);
+    --fs_primary_heading:var(--fs_900)
+    --fs_secondary_heading: var(--fs_800)
+    --fs_nav: var(--fs_300);
+  }
+
+  .even_columns{
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+
+  }
+}
