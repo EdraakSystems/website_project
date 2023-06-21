@@ -1,0 +1,107 @@
+.visually_hidden {
+    position: absolute;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Navigation */
+.primary_header {
+    padding-top: var(--size_700);
+    display: flex;
+}
+
+.nav_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mob_nav_toggle {
+    display: none;
+}
+
+.mob_nav_toggle .icon_close {
+    display: none;
+}
+
+.nav_list {
+    display: flex;
+    font-size: var(--fs_nav);
+    gap: clamp(var(--size_400), 5vw, var(--size_700));
+    font-weight: var(--fw_semi);
+}
+
+.nav_list a {
+    color: var(--clr_primary_400);
+    transition: color 0.3s;
+}
+
+.nav_list a:hover,
+.nav_list a:focus {
+    color: var(--clr_accent_400);
+}
+
+@media (max-width:50em) {
+
+    .primary_nav {
+        display: none;
+        position: fixed;
+        inset: 7rem var(--size_400) auto;
+        padding: 1.5rem;
+        background: var(--clr_neutral_100);
+        border-radius: var(--size_100);
+        box-shadow: 0 0.5em 0.5em rgb(0, 0, 0, 0.05);
+    }
+
+    .primary_header[data-overlay]::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: linear-gradient(rgb(0 0 0/0), rgb(0 0 0 /0.8));
+    }
+
+    .nav_list {
+        display: grid;
+        gap: var(--size_600);
+        text-align: center;
+        font-weight: var(--fw_bold);
+    }
+
+    .primary_nav[data-visible] {
+        display: block;
+    }
+
+    .mob_nav_toggle {
+        display: block;
+        position: fixed;
+        z-index: 100;
+        top: var(--size_600);
+        right: var(--size_400);
+        cursor: pointer;
+        background: none;
+        border: 0;
+        padding: 0.5em;
+    }
+
+    .opened {
+        display: block;
+        position: fixed;
+    }
+}
+
+.display_sm_none {
+    display: none;
+}
+
+@media (min-width:50em) {
+    .display_md_inline_flex {
+        display: inline-flex;
+    }
+}

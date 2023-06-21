@@ -42,6 +42,16 @@
   --fs_secondary_heading: var(--fs_700);
   --fs_nav: var(--fs_500);
   --fs_btn: var(--fs_300);
+
+  --size_100: 0.25rem;
+  --size_200: 0.5rem;
+  --size_300: 0.75rem;
+  --size_400: 1rem;
+  --size_500: 1.5rem;
+  --size_600: 2rem;
+  --size_700: 3rem;
+  --size_800: 4rem;
+  --size_900: 5rem;
 }
 
 /* Make images easier to work with */
@@ -62,6 +72,15 @@ a {
   text-decoration: none;
 }
 
+p:not([class]) {
+  opacity: 0.7;
+  max-width: 32ch;
+}
+
+p[data-width='wide'] {
+  max-width: 42ch;
+}
+
 /* general styling */
 body {
   font-size: var(--fs_body);
@@ -69,25 +88,6 @@ body {
   color: var(--clr_primary_400);
 }
 
-.container {
-  --max-width: 1110px;
-  --padding: 1rem;
-  width: min(var(--max-width), 100% - (var(--padding)*2));
-  margin-inline: auto;
-}
-
-.even_columns {
-  display: grid;
-  gap: 1rem;
-}
-
-.padding_block_900 {
-  padding-block: 3rem;
-}
-
-.padding_block_700 {
-  padding-block: 2rem;
-}
 
 .btn {
   display: inline-flex;
@@ -123,120 +123,23 @@ body {
   background-color: var(--clr_neutral_100);
 }
 
-.visually_hidden {
-  position: absolute;
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-/* Navigation */
-.primary_header {
-  padding-top: 1.5rem;
-  display: flex;
-}
-
-.nav_wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.mob_nav_toggle {
-  display: none;
-}
-
-.mob_nav_toggle .icon_close {
-  display: none;
-}
-
-.nav_list {
-  display: flex;
-  font-size: var(--fs_nav);
-  gap: clamp(1.5rem, 5vw, 2.5rem);
-  font-weight: var(--fw_semi);
-}
-
-.nav_list a {
-  color: var(--clr_primary_400);
-  transition: color 0.3s;
-}
-
-.nav_list a:hover,
-.nav_list a:focus {
-  color: var(--clr_accent_400);
-}
-
-@media (max-width:50em) {
-
-  .primary_nav {
-    display: none;
-    position: fixed;
-    inset: 7rem 3rem auto;
-    padding: 1.5rem;
-    background: var(--clr_neutral_100);
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5em 0.5em rgb(0, 0, 0, 0.05);
-  }
-
-  .primary_header[data-overlay]::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: linear-gradient(rgb(0 0 0/0), rgb(0 0 0 /0.8));
-  }
-
-  .nav_list {
-    display: grid;
-    gap: 1.5rem;
-    text-align: center;
-    font-weight: var(--fw_bold);
-  }
-
-  .primary_nav[data-visible] {
-    display: block;
-  }
-
-  .mob_nav_toggle {
-    display: block;
-    position: fixed;
-    z-index: 100;
-    right: 0.85rem;
-    cursor: pointer;
-    background: none;
-    border: 0;
-    padding: 0.5em;
-  }
-
-  .opened {
-    display: block;
-    position: fixed;
-  }
-
-}
-
-@media (min-width: 50em) {
-  :root {
-
-    --fs_body: var(--fs_500);
-    --fs_primary_heading: var(--fs_900) --fs_secondary_heading: var(--fs_800) --fs_nav: var(--fs_300);
-  }
-
-  .even_columns {
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-
-  }
-
-}
-
 /* Utility Class */
+.container {
+  --max-width: 1110px;
+  --padding: 1rem;
+  width: min(var(--max-width), 100% - (var(--padding)*2));
+  margin-inline: auto;
+}
+
+.even_columns {
+  display: grid;
+  gap: 1rem;
+}
+
+:where(.flow :not(:first-child)) {
+  margin-top: var(--flow_spacer, 4em);
+}
+
 .text_primary_400 {
   color: var(--clr_primary_400);
 }
@@ -278,7 +181,7 @@ body {
 }
 
 .fw_bold {
-  font-weight: var(--ff_body);
+  font-weight: var(--fw_bold);
 }
 
 .fw_semi {
@@ -315,12 +218,27 @@ body {
   font-size: var(--fs_600);
 }
 
-.display_sm_none {
-  display: none;
+.padding_block_900 {
+  padding-block: var(--size_900);
 }
 
-@media (min-width:50em) {
-  .display_md_inline_flex {
-    display: inline-flex;
+.padding_block_700 {
+  padding-block: var(--size_700);
+}
+
+@media (min-width: 50em) {
+  :root {
+
+    --fs_body: var(--fs_500);
+    --fs_primary_heading: var(--fs_900);
+    --fs_secondary_heading: var(--fs_800);
+    --fs_nav: var(--fs_300);
   }
+
+  .even_columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+
+  }
+
 }
