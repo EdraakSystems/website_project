@@ -134,7 +134,13 @@ body {
 .even_columns {
   display: grid;
   gap: 1rem;
+  align-items: center;
 }
+
+.justify_end {
+  justify-self: end;
+}
+
 
 :where(.flow :not(:first-child)) {
   margin-top: var(--flow_spacer, 4em);
@@ -226,6 +232,10 @@ body {
   padding-block: var(--size_700);
 }
 
+.vertical_align_center {
+  align-items: center;
+}
+
 @media (min-width: 50em) {
   :root {
 
@@ -238,7 +248,37 @@ body {
   .even_columns {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
-
   }
 
+  .justify_end_md {
+    justify-self: end;
+  }
+}
+
+/* CTA (Call to Action) */
+.cta {
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+}
+
+@media (min-width:50em) {
+  .cta {
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: url('./images/bg-tablet-pattern.svg'
+    ), url('./images/bg-tablet-pattern.svg'
+    );
+  background-position: -15rem -5rem, 80rem -42rem;
+  background-repeat: no-repeat;
+  opacity: 0.1;
 }
