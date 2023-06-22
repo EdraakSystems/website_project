@@ -129,21 +129,49 @@ body {
 }
 
 /* image with blob bg */
-.image_with_blob_bg {
-  /* position: relative; */
+
+@media(max-width:47em) {
+  .hero__image {
+    order: -1;
+  }
 }
 
-.image_with_blob_bg::before {
+.hero__image::before {
   content: '';
   position: absolute;
   right: 0;
   top: 0;
   z-index: -1;
-  width: 380px;
-  aspect-ratio: 1/1.3;
+  width: 87%;
+  max-height: 70vh;
+  max-height: 70dvh;
+  aspect-ratio: 1/1.2;
   background-image: url('./images/bg-tablet-pattern.svg');
   background-repeat: no-repeat;
   background-position: bottom left;
+}
+
+@media(min-width:47em) {
+  .hero__image::before {
+    width: 45%;
+  }
+}
+
+/* sales points */
+.sales_point {
+  position: relative;
+}
+
+.sales_point::before {
+  content: url('./images/bg-tablet-pattern.svg');
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 50%;
+  max-height: 70vh;
+  max-height: 70dvh;
+  aspect-ratio: 1/1.2;
 }
 
 /* Utility Class */
@@ -263,6 +291,10 @@ body {
   margin-block-end: var(--size_700);
 }
 
+.mx_auto {
+  margin-inline: auto;
+}
+
 .text_center {
   text-align: center;
 }
@@ -303,9 +335,9 @@ body {
   text-align: center;
 }
 
-@media (min-width:50em) {
+@media (min-width:47em) {
   .cta {
-    text-align: left;
+    text-align: center;
     justify-content: center;
     align-items: center;
   }

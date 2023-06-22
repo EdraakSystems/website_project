@@ -27,9 +27,7 @@
     display: none;
 }
 
-.mob_nav_toggle .icon_close {
-    display: none;
-}
+
 
 .nav_list {
     display: flex;
@@ -49,6 +47,10 @@
 }
 
 @media (max-width:50em) {
+    .primary_header[data-overlay] {
+        position: relative;
+        z-index: 999;
+    }
 
     .primary_nav {
         display: none;
@@ -85,9 +87,19 @@
         top: var(--size_600);
         right: var(--size_400);
         cursor: pointer;
-        background: none;
+        background: transparent;
         border: 0;
         padding: 0.5em;
+        width: 1.5rem;
+        aspect-ratio: 1;
+        background-image: url('../images/icon-hamburger.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .mob_nav_toggle[aria-expanded='true'] {
+        background-image: url('../images/icon-close.svg');
     }
 
     .opened {
