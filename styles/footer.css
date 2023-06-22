@@ -72,6 +72,7 @@ input:where([type="text"], [type="email"], ) {
 .footer_nav a {
     color: var(--clr_neutral_100);
     text-decoration: none;
+    transition: color 0.4s;
 }
 
 .footer_nav a:is(:hover, :focus) {
@@ -89,6 +90,7 @@ input:where([type="text"], [type="email"], ) {
     width: var(--size_600);
     aspect-ratio: 1;
     fill: var(--clr_neutral_100);
+    transition: fill 0.4s;
 }
 
 .social-list a:is(:hover, :focus) .social-icon {

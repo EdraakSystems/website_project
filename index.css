@@ -110,6 +110,10 @@ body {
   background-color: var(--clr_accent_300);
 }
 
+.btn[data-shadow='none'] {
+  box-shadow: none;
+}
+
 .btn[data-type='inverted'] {
   color: var(--clr_accent_400);
   background-color: var(--clr_neutral_100);
@@ -236,6 +240,10 @@ body {
   align-items: center;
 }
 
+.margin_bottom_700 {
+  margin-block-end: var(--size_700);
+}
+
 @media (min-width: 50em) {
   :root {
 
@@ -252,6 +260,16 @@ body {
 
   .justify_end_md {
     justify-self: end;
+  }
+}
+
+@media (max-width: 50em) {
+  .text_center_sm_only {
+    text-align: center;
+  }
+
+  .text_center_sm_only p {
+    margin-inline: auto;
   }
 }
 

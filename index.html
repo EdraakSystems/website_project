@@ -12,6 +12,10 @@
   <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="./styles/navBar.css">
   <link rel="stylesheet" href="./styles/footer.css">
+  <link rel="stylesheet" href="./styles/numList.css">
+  <link rel="stylesheet" href="./styles/slider.css">
+  <link rel="stylesheet" href="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css" />
+  <script src="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js" defer></script>
 </head>
 
 <body>
@@ -62,7 +66,7 @@
     <section class="padding_block_900">
       <div class="container">
         <div class="even_columns">
-          <div class="flow">
+          <div class="flow | text_center_sm_only margin_bottom_700" style="--flow_spacer:1.5rem">
             <h2 class="fs_secondary_heading fw_bold">
               What’s different about Manage?
             </h2>
@@ -77,8 +81,8 @@
               <li>
                 <div class="flow" style="--flow_spacer:1em">
 
-                  <h3 class="fs_600 fw_bold">Track company-wide progress</h3>
-                  <p data-width='wide'>
+                  <h3 class="numbered_items__title fs_600 fw_bold">Track company-wide progress</h3>
+                  <p class="numbered_items__body" data-width='wide'>
                     See how your day-to-day tasks fit into the wider vision. Go
                     from tracking progress at the milestone level all the way
                     done to the smallest of details. Never lose sight of the
@@ -89,8 +93,8 @@
               <li>
                 <div class="flow" style="--flow_spacer:1em">
 
-                  <h3 class="fs_600 fw_bold">Advanced built-in reports</h3>
-                  <p data-width='wide'>
+                  <h3 class="numbered_items__title fs_600 fw_bold">Advanced built-in reports</h3>
+                  <p class="numbered_items__body" data-width='wide'>
                     Set internal delivery estimates and track progress toward
                     company goals. Our customisable dashboard helps you build
                     out the reports you need to keep key stakeholders informed.
@@ -100,10 +104,10 @@
               <li>
                 <div class="flow" style="--flow_spacer:1em">
 
-                  <h3 class="fs_600 fw_bold">
+                  <h3 class="numbered_items__title fs_600 fw_bold">
                     Everything you need in one place
                   </h3>
-                  <p data-width='wide'>
+                  <p class="numbered_items__body" data-width='wide'>
                     Everything you need in one place Stop jumping from one
                     service to another to communicate, store files, track tasks
                     and share documents. Manage offers an all-in-one team
@@ -192,7 +196,7 @@
         <div class="primary_footer_form">
           <form action="">
             <input type="email" placeholder="Updates in your inbox…" />
-            <button class="btn">Go</button>
+            <button class="btn" data-shadow="none">Go</button>
           </form>
           <p>Copyright 2020. All Rights Reserved</p>
         </div>
