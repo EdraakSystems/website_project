@@ -21,6 +21,7 @@
   --clr_accent_500: hsl(12, 88%, 45%);
 
   --clr_neutral_900: hsl(232, 12%, 13%);
+  --clr_neutral_200: hsl(0, 0%, 97%);
   --clr_neutral_100: hsl(0 0% 100%);
   --ff_primary: "Be Vietnam Pro", sans-serif;
   --ff_body: var(--ff_primary);
@@ -242,6 +243,10 @@ body {
 
 .margin_bottom_700 {
   margin-block-end: var(--size_700);
+}
+
+.text_center {
+  text-align: center;
 }
 
 @media (min-width: 50em) {
