@@ -18,7 +18,11 @@
   <header class="primary_header">
     <div class="container">
       <div class="nav_wrapper">
-        <a href="#"><img src="./images/logo.svg" alt="Manage" /></a>
+        <a href="#">
+          <svg class="logo" width="146" height="24">
+            <use xlink:href="./images/logo.svg#logo"></use>
+          </svg>
+        </a>
         <button class="mob_nav_toggle" aria-controls="primary_navigation" aria-expanded="'false">
           <img class="icon_hamburger" src="./images/icon-hamburger.svg" alt="" aria-hidden="true" />
           <img class="icon_close" src="./images/icon-close.svg" alt="" aria-hidden="true" />
@@ -133,12 +137,16 @@
       </div>
     </section>
   </main>
-  <footer class="bg_neutral_900 text_neutral_100 container padding_block_700">
+  <footer class="primary_footer |container bg_neutral_900 text_neutral_100 padding_block_700">
     <div class="container">
-      <div class="even_columns">
-        <div>
-          <a href="#"><img src="./images/logo.svg" alt="Manage" /></a>
-          <ul class="flow" role="list" aria-label="social links">
+      <div class="primary_footer_wrapper">
+        <div class="primary_footer_logo_social">
+          <a href="#" aria-label="home">
+            <svg class="logo" width="146" height="24">
+              <use xlink:href="./images/logo.svg#logo"></use>
+            </svg>
+          </a>
+          <ul class="social-list " role="list" aria-label="social links">
             <li>
               <a aria-label="facebook" href="">
                 <svg class="social-icon">
@@ -168,9 +176,9 @@
               </a></li>
           </ul>
         </div>
-        <div>
+        <div class="primary_footer_nav">
           <nav class="footer_nav">
-            <ul aria-label="footer" role="list">
+            <ul class="flow" style="--flow_spacer:1em" aria-label="footer" role="list">
               <li><a href="#">Home</a></li>
               <li><a href="#">Pricing</a></li>
               <li><a href="#">Products</a></li>
@@ -181,7 +189,7 @@
             </ul>
           </nav>
         </div>
-        <div>
+        <div class="primary_footer_form">
           <form action="">
             <input type="email" placeholder="Updates in your inbox…" />
             <button class="btn">Go</button>
