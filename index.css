@@ -285,6 +285,16 @@ body {
   width: 100%;
 }
 
+/* sales data */
+.sales_columns {
+  display: flex;
+  gap: 1rem;
+}
+
+.sales_columns_left>p {
+  width: 80%;
+}
+
 /* image with blob bg */
 
 @media (max-width: 30em) {
@@ -346,6 +356,8 @@ body {
   :where(.flow :not(:first-child)) {
     margin-top: var(--flow_spacer, 1em);
   }
+
+
 }
 
 @media (max-width: 30em) {

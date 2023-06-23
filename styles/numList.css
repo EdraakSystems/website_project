@@ -52,7 +52,25 @@
     grid-column: 1 /span 1;
 }
 
+
 @media (max-width: 30em) {
+
+    .numbered_items__title {
+        font-size: var(--size_500);
+        font-weight: var(--fw-bold);
+    }
+
+    .numbered_items__body {
+        font-size: var(--size_500);
+        max-width: 80%;
+        padding: 0 1em;
+        margin: 1rem auto;
+        font-weight: var(--fw-regular);
+        opacity: 0.7;
+    }
+}
+
+@media (max-width: 50em) {
     .numbered-items div::after {
         --bg: var(--clr_accent_400);
         content: "";
@@ -64,5 +82,38 @@
         box-shadow: 5em 0 0 var(--bg);
         background: var(--bg);
 
+    }
+
+    /* sales data */
+    .sales_columns {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .sales_columns_left>h2 {
+        font-size: var(--size_700);
+        margin: 0 auto;
+    }
+
+    .sales_columns_left>p {
+        font-size: var(--size_500);
+        max-width: 80%;
+        padding: 0 1em;
+        margin: 1rem auto;
+    }
+
+    .numbered_items__title {
+        font-size: var(--size_500);
+        font-weight: var(--fw-bold);
+    }
+
+    .numbered_items__body {
+        font-size: var(--size_500);
+        max-width: 80%;
+        padding: 0 1em;
+        margin: 1rem auto;
+        font-weight: var(--fw-regular);
+        opacity: 0.7;
     }
 }

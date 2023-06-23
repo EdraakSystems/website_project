@@ -18,7 +18,6 @@
 /* sales points */
 .sales_points_blog {
     position: relative;
-    align-items: top;
 }
 
 .sales_points_blog::before {
