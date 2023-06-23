@@ -1,0 +1,98 @@
+/* image with blob bg */
+.hero__img {
+    position: relative;
+    width: var(--max-width);
+}
+
+.hero__image::before {
+    position: absolute;
+    content: url('../images/bg-tablet-pattern.svg');
+    position: absolute;
+    right: 8em;
+    top: -3em;
+    z-index: -1;
+    zoom: 90%;
+    max-width: 100%;
+}
+
+/* sales points */
+.sales_points_blog {
+    position: relative;
+    align-items: top;
+}
+
+.sales_points_blog::before {
+    content: url('../images/bg-tablet-pattern.svg');
+    position: absolute;
+    left: 45%;
+    bottom: 110%;
+    width: 100px;
+    zoom: 60%;
+    z-index: -1;
+}
+
+/* Max-Width Queries */
+@media(max-width:50em) {
+    .hero__image::before {
+        right: -2em;
+        top: -5em;
+        zoom: 50%;
+        height: 65%;
+    }
+
+    .sales_points_blog::before {
+        left: 45%;
+        bottom: 110%;
+        width: 100px;
+        zoom: 60%;
+        z-index: -1;
+    }
+}
+
+@media(max-width:25em) {
+    .hero__image::before {
+        right: -3em;
+        zoom: 45%;
+        height: 45%;
+    }
+}
+
+/* Min-Width Queries */
+/* 40em=640px sm*/
+@media(min-width:40em) {}
+
+/* 50em=800px md*/
+@media(min-width:50em) {
+    .sales_points_blog::before {
+        left: -700px;
+        top: 42%;
+        bottom: 100%;
+        width: 100px;
+        zoom: 70%;
+    }
+
+    .hero__image::before {
+        right: -5em;
+        top: -5em;
+        zoom: 60%;
+    }
+
+}
+
+/* 64em=1024px lg*/
+@media(min-width:64em) {
+    .hero__image::before {
+        right: -5em;
+        top: -5em;
+        zoom: 70%;
+    }
+}
+
+/* 80em=1280px xl*/
+@media(min-width:80em) {
+    .hero__image::before {
+        right: -5em;
+        top: -5em;
+        zoom: 80%;
+    }
+}
