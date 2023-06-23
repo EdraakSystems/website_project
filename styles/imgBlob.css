@@ -41,25 +41,33 @@
     }
 
     .sales_points_blog::before {
-        left: 45%;
-        bottom: 110%;
+        rotate: 15deg;
+        left: 60%;
+        bottom: 150%;
         width: 100px;
         zoom: 60%;
-        z-index: -1;
     }
 }
 
-@media(max-width:25em) {
+@media(max-width:30em) {
     .hero__image::before {
-        right: -3em;
-        zoom: 45%;
+        left: 30%;
+        zoom: 40%;
+        bottom: 200%;
         height: 45%;
+    }
+
+    .sales_points_blog::before {
+        rotate: 15deg;
+        left: 60%;
+        bottom: 150%;
+        width: 100px;
+        zoom: 50%;
+        opacity: 0.7;
     }
 }
 
 /* Min-Width Queries */
-/* 40em=640px sm*/
-@media(min-width:40em) {}
 
 /* 50em=800px md*/
 @media(min-width:50em) {
