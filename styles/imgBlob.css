@@ -40,11 +40,12 @@
     }
 
     .sales_points_blog::before {
-        rotate: 15deg;
+        content: '';
+        /* rotate: 15deg;
         left: 60%;
         bottom: 150%;
         width: 100px;
-        zoom: 60%;
+        zoom: 60%; */
     }
 }
 
@@ -57,12 +58,13 @@
     }
 
     .sales_points_blog::before {
-        rotate: 15deg;
+        content: '';
+        /* rotate: 15deg;
         left: 60%;
         bottom: 150%;
         width: 100px;
         zoom: 50%;
-        opacity: 0.7;
+        opacity: 0.7; */
     }
 }
 
