@@ -5,6 +5,7 @@
 .primary_footer_wrapper {
     display: grid;
     gap: var(--size_700);
+    width: 100%;
     grid-template-areas:
         "form"
         "nav"
@@ -28,7 +29,7 @@
     grid-area: form;
 
     display: grid;
-    align-content: space-between;
+    align-content: center;
 }
 
 .primary_footer form {
@@ -59,7 +60,19 @@ input:where([type="text"], [type="email"], ) {
 @media (max-width: 50em) {
     .primary_footer_wrapper>* {
         margin-inline: auto;
+        width: 100%;
+        align-items: center;
+        text-align: center;
     }
+
+    .primary_footer form {
+        justify-content: center;
+    }
+
+    .primary_footer_form p {
+        text-align: center;
+    }
+
 }
 
 /* footer navigation */
